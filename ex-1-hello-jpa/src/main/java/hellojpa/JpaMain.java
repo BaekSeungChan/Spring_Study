@@ -15,11 +15,8 @@ public class JpaMain {
         // JPA에 일어나는 변경은 트랜잭션 안에서 일어나야 한다.
 
         try{
-            //code
-            Member member = new Member();
-            member.setId(1L);
-            member.setName("HelloA");
-            em.persist(member);
+            Member findMember = em.find(Member.class, 1L);
+            findMember.setName("chan");
 
             tx.commit();
         } catch (Exception e){
@@ -30,3 +27,9 @@ public class JpaMain {
         emf.close();
     }
 }
+
+/*
+주의
+엔티티 메니저 팩토리르는 하나만 생성해서 애플리케이션 전체에서 공유
+엔틴티 매니저는 쓰레드간에 공유X(사용하고 버려야 한다.)
+JPA의 모든 데이터 변경은 트랜잭션 안에서 실행*/
