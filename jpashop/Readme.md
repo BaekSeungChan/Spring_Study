@@ -1,0 +1,6 @@
+- 프로젝트 생성
+- 라이브러리 살펴보기
+- View 환경설정
+- H2 데이터베이스 설치
+- JPA와 DB 설정, 동작확인
+- 사용 기능 : web, thymeleaf, jpa, h2, lombok
